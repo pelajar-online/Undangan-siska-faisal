@@ -1,0 +1,238 @@
+/* Reset & font */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('images/02.jpg') no-repeat center center/cover;
+  color: #333;
+  text-align: center;
+}
+
+/* Overlay lebih tebal & ada blur */
+.overlay {
+  background: rgba(255, 255, 255, 0.5);
+  min-height: 100vh;
+  padding: 20px;
+  /* backdrop-filter: blur(3px);  blur background */
+  /*opacity: 0.5;*/
+}
+
+/* Animasi dasar */
+@keyframes fadeSlideDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes growLine {
+  from { width: 0; opacity: 0; }
+  to { width: 80%; opacity: 1; }
+}
+@keyframes fadeInNames {
+  0% { opacity: 0; transform: translateY(10px); }
+  50% { opacity: 0.5; transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* Container */
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Judul */
+h1 {
+  font-family: 'Roboto', cursive;
+  font-size: 2.2em;
+  color: rgb(126, 63, 27);
+  margin-bottom: 5px;
+  animation: fadeSlideDown 1s ease forwards;
+}
+
+/* Foto pasangan */
+.photo img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #a0522d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 15px 0;
+  animation: zoomIn 1.2s ease forwards;
+}
+
+/* Nama mempelai */
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
+  margin: 10px 0;
+  color: #a0522d;
+  animation: fadeIn 3.5s ease forwards; /* dari 2s jadi 3.5s */
+  text-shadow: 0 0 6px rgba(255, 255, 255, 1);
+}
+
+.names span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: letterIn 0.5s ease forwards;
+}
+
+@keyframes letterIn {
+  0%   { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Divider floral */
+.divider {
+  width: 100px;
+  margin: 10px auto;
+}
+
+/* Kotak detail acara */
+.details {
+  background: rgba(41, 6, 6, 0.95);
+  padding: 15px;
+  border-radius: 12px;
+  margin: 15px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  animation: fadeSlideUp 1.4s ease forwards;
+}
+
+.details p {
+  margin: 8px 0;
+  font-size: 1em;
+}
+
+/* Khusus tanggal dan waktu */
+.details p:nth-child(1) {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #ffffff;
+}
+.details p:nth-child(2) {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.1em;
+  color: #fdfdfd;
+}
+.details p:nth-child(3) {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 1.1em;
+  color: #fdfdfd;
+}
+
+/* Tombol WhatsApp */
+.maps-link {
+  display: inline-block;
+  background: #25d366;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin: 20px 0;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  animation: zoomIn 1.6s ease forwards;
+}
+.maps-link:hover {
+  background: #1ea955;
+}
+
+/* QR code */
+.qr img {
+  width: 180px;
+  height: 180px;
+  animation: zoomIn 1.5s ease forwards;
+}
+.qr p {
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* Footer branding */
+.footer-divider {
+  width: 80%;
+  height: 2px;
+  margin: 1px auto;
+  background: linear-gradient(to right, transparent, #a0522d, transparent);
+  animation: growLine 1.2s ease forwards;
+}
+
+footer {
+  text-align: center;
+  margin-top: 25px;
+  padding: 15px 10px;
+  font-size: 0.9em;
+  color: #555;
+  animation: fadeUp 1.5s ease forwards;
+}
+
+/* Terima kasih */
+footer p {
+  margin-bottom: 10px;
+  font-size: 1.05em;
+  font-weight: 700;        /* lebih tebal */
+  color: #000000;          /* warna lebih gelap biar kontras */
+  letter-spacing: 0.5px;   /* jarak huruf sedikit renggang */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo Evalita */
+footer img.logo {
+  display: block;
+  margin: 0 auto 6px;
+  width: 120px;
+  height: auto;
+  opacity: 0;
+  animation: fadeUp 1.8s ease forwards;
+}
+
+/* Powered by */
+footer span.powered {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #000000;
+  display: block;
+  opacity: 0;
+  animation: fadeUp 2s ease forwards;
+}
+
+.redirect-info {
+  background: #fff7d1;
+  border: 1px solid #e0c050;
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: block;
+  width: fit-content;
+  margin: 15px auto 20px;   /* jarak atas dan bawah */
+  text-align: center;
+
+  font-size: 1em;
+  color: #333;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+  animation: fadeUp 2s ease forwards;
+}
+
+
+
+
+
+
+

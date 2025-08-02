@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Evalita Printing">
+  <meta name="description" content="Undangan digital elegan - Evalita Printing">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  
+  <!-- Redirect otomatis 3 detik -->
+  <!-- <meta http-equiv="refresh" content="3;url=https://maps.app.goo.gl/nHQagXJ9FK7G5J5C9"> -->
+
+  <title>UNDANGAN PERNIKAHAN</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>HAPPY WEDDING</h1>
+      <div class="photo">
+        <img src="images/01.jpg" alt="Foto Pasangan" />
+      </div>
+      <div class="names">Siska & Faisal</div>
+
+      <div class="details">
+        <p><strong>Tanggal:</strong> Kamis, 28 Agustus 2025</p>
+        <p><strong>Waktu:</strong> 10.00 WIB - selesai</p>
+        <p><strong>Lokasi:</strong> Dusun I Desa Siraman</p>
+      </div>
+
+      <a class="maps-link" href="https://wa.me/6285769524983" target="_blank">
+        Hubungi Kami via WhatsApp
+      </a>
+
+      <footer>
+        <div class="footer-divider"></div>
+        <p>Terima kasih atas doa & kehadiran Anda</p>
+        <img src="images/logo.png" alt="Evalita Printing" class="logo">
+        <span class="powered">Powered by Evalita Printing</span>
+      </footer>
+
+      <p class="redirect-info">
+        📍 Anda akan diarahkan ke lokasi acara di Google Maps dalam 
+        <span id="countdown">3</span> detik...
+      </p>
+
+    </div>
+  </div>
+
+  <!-- <script>
+  let timeLeft = 3; // detik awal
+  const countdownEl = document.getElementById("countdown");
+
+  const timer = setInterval(() => {
+    timeLeft--;
+    countdownEl.textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+      clearInterval(timer);
+      window.location.href = "https://maps.app.goo.gl/nHQagXJ9FK7G5J5C9";
+    }
+  }, 1000);
+</script> -->
+<script>
+  const namesEl = document.querySelector('.names');
+  const text = namesEl.textContent.trim();
+  namesEl.textContent = ''; // kosongkan dulu
+
+  [...text].forEach((char, i) => {
+    const span = document.createElement('span');
+    span.textContent = char;
+    if (char === ' ') {
+      span.innerHTML = '&nbsp;'; // biar spasi nggak hilang
+    }
+    span.style.animationDelay = `${i * 0.15}s`;
+    namesEl.appendChild(span);
+  });
+</script>
+
+
+
+</body>
+</html>
+
